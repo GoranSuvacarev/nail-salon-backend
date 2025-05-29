@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nail-salon-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nail_salon
+      MYSQL_USER: nailsalon
+      MYSQL_PASSWORD: nailsalon123
+    ports:
+      - "3306:3306"
+    volumes:
+      - nail-salon-mysql-data:/var/lib/mysql
+
+volumes:
+  nail-salon-mysql-data:
