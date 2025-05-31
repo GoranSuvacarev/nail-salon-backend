@@ -26,12 +26,9 @@
 
 ## Running the Project
 1. Start MySQL Docker: `docker-compose up -d`
-2. Run Spring Boot application
+2. Run Spring Boot application: './mvnw spring-boot:run'
 3. API available at: http://localhost:8080
 
-## Test Credentials
-- Staff: admin@nailsalon.com / admin123
-- Customer: customer@example.com / password123
+## Frontend Repository
 
-## API Documentation
-- Postman collection: [To be added]
+Frontend: [https://github.com/GoranSuvacarev/nail-salon-backend](https://github.com/GoranSuvacarev/nail-salon-frontend)
