@@ -31,4 +31,4 @@
 
 ## Frontend Repository
 
-Frontend: [https://github.com/yourusername/nail-salon-backend](https://github.com/GoranSuvacarev/nail-salon-frontend)
+Frontend: [https://github.com/GoranSuvacarev/nail-salon-backend](https://github.com/GoranSuvacarev/nail-salon-frontend)
