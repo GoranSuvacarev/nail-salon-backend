@@ -16,7 +16,7 @@
 -  JWT Authentication & Authorization
 -  Role-based Access Control (CUSTOMER, STAFF)
 -  Token Refresh Mechanism
-- ✅OneToMany and ManyToMany Relationships
+-  OneToMany and ManyToMany Relationships
 
 ## Database Schema
 - users (with roles: CUSTOMER, STAFF)
