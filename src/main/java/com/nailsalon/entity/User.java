@@ -60,15 +60,6 @@ public class User {
     @JsonIgnore
     private List<StaffAvailability> availabilities = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_services",
-            joinColumns = @JoinColumn(name = "staff_id"),
-            inverseJoinColumns = @JoinColumn(name = "service_id")
-    )
-    @JsonIgnore
-    private List<Service> specializedServices = new ArrayList<>();
-
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

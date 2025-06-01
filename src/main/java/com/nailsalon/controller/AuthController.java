@@ -7,17 +7,16 @@ import com.nailsalon.dto.response.TokenRefreshResponse;
 import com.nailsalon.entity.User;
 import com.nailsalon.repository.UserRepository;
 import com.nailsalon.security.CustomUserDetails;
+import com.nailsalon.security.JwtTokenProvider;
 import com.nailsalon.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +30,7 @@ public class AuthController {
     private final AuthService authService;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final com.nailsalon.security.JwtTokenProvider tokenProvider;
+    private final JwtTokenProvider tokenProvider;
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
@@ -44,7 +43,7 @@ public class AuthController {
     }
 
     @PostMapping("/register-staff")
-    @PreAuthorize("hasRole('STAFF')")  // Only existing staff can register new staff
+    @PreAuthorize("hasRole('STAFF')")
     public ResponseEntity<AuthResponse> registerStaff(@Valid @RequestBody RegisterRequest registerRequest) {
         if (userRepository.existsByEmail(registerRequest.getEmail())) {
             throw new RuntimeException("Email already exists");
@@ -56,7 +55,7 @@ public class AuthController {
         user.setFirstName(registerRequest.getFirstName());
         user.setLastName(registerRequest.getLastName());
         user.setPhone(registerRequest.getPhone());
-        user.setRole(User.Role.STAFF);  // Set as STAFF
+        user.setRole(User.Role.STAFF);
 
         User savedUser = userRepository.save(user);
 
@@ -86,7 +85,7 @@ public class AuthController {
         Map<String, Object> info = new HashMap<>();
         info.put("email", userDetails.getUsername());
         info.put("role", userDetails.getUser().getRole().name());
-        info.put("expiresIn", tokenProvider.getExpirationInSeconds()); // Use tokenProvider method
+        info.put("expiresIn", tokenProvider.getExpirationInSeconds());
         return ResponseEntity.ok(info);
     }
 

@@ -45,10 +45,6 @@ public class Service {
     @JsonIgnore
     private List<Appointment> appointments = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "specializedServices")
-    @JsonIgnore
-    private List<User> specialists = new ArrayList<>();
-
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
