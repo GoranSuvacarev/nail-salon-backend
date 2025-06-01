@@ -6,16 +6,17 @@
 - MySQL 8.0 (Docker)
 - Spring Security with JWT
 - Spring Data JPA
+- Docker Desktop
 
 ## Features Implemented
-- ✅ User Management (CRUD)
-- ✅ Service Management
-- ✅ Appointment Booking System
-- ✅ Staff Availability Management
-- ✅ JWT Authentication & Authorization
-- ✅ Role-based Access Control (CUSTOMER, STAFF)
-- ✅ Token Refresh Mechanism
-- ✅ OneToMany and ManyToMany Relationships
+-  User Management (CRUD)
+-  Service Management
+-  Appointment Booking System
+-  Staff Availability Management
+-  JWT Authentication & Authorization
+-  Role-based Access Control (CUSTOMER, STAFF)
+-  Token Refresh Mechanism
+- ✅OneToMany and ManyToMany Relationships
 
 ## Database Schema
 - users (with roles: CUSTOMER, STAFF)
