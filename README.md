@@ -27,7 +27,7 @@
 
 ## Running the Project
 1. Start MySQL Docker: `docker-compose up -d`
-2. Run Spring Boot application: './mvnw spring-boot:run'
+2. Run Spring Boot application: `./mvnw spring-boot:run`
 3. API available at: http://localhost:8080
 
 ## Frontend Repository
